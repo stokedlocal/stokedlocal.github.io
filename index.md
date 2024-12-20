@@ -1,4 +1,4 @@
 ---
-title: Welcome to my blog
+title: Stoked Local Media
 ---
 
