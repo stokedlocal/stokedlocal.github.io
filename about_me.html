@@ -5,22 +5,47 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chloe Dusseault - About Me</title>
+  <title>Chloe Dusseault- About Me</title>
   <meta name="description"
     content="Hello there, I'm Chloe Dusseault – an intrepid explorer through the lens, on a relentless quest to capture the world's boundless wonders. Join me in unraveling the extraordinary through my lens as I embark on a visual journey like no other.">
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
-  <link rel="stylesheet" href="output.css" />
+  <link rel="icon" type="image/x-icon" href="dist/assets/favicon.ico" />
+  <link rel="stylesheet" href="dist/output.css" />
   <!-- <link rel="stylesheet" href="styles.css" /> -->
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Start - Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <!-- End - Fonts -->
+  <!-- Start - Fancybox Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!-- End - Fancybox Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      content: ["./dist/*.{html,js}"],
+      theme: {
+        extend:
+                {
+                  fontFamily: {
+                    'nothingyoucoulddo': ['Nothing You Could Do', 'cursive'],
+                    'signika': ['Signika', 'sans-serif'],
+                  },
+                },
+      },
+      plugins: [],
+    }
+  </script>
 </head>
+
+
 
 <body
   class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
@@ -84,24 +109,21 @@
       <div class="col-span-2 md:col-span-1">
         <div
           class="bg-white dark:bg-neutral-900 p-5 pb-28 m-6 md:m-12 shadow-lg border border-gray-100 dark:border-neutral-800 hover:rotate-0 transition duration-500 -rotate-6 relative">
-          <img src="/assets/Avatar.png" alt=""
+          <img src="dist/assets/Avatar.png" alt=""
             class="smooth-edges flex flex-col w-full aspect-square object-cover h-auto" />
-          <div class="absolute bottom-0 left-0 right-0 text-center">
-            <p class="text-gray-800 dark:text-slate-200 pb-7 h-full text-6xl font-nothingyoucoulddo">me</p>
-          </div>
         </div>
 
       </div>
       <section class="font-normal text-center text-base md:text-start mx-3 col-span-2 md:col-span-1 my-auto">
         <div class="block md:hidden">
-          <p class="text-3xl font-serif font-bold mb-1">Hello there,</p>
-          <p class="text-3xl font-serif font-bold mb-6">I'm Chloe <span class="animate-wave">👋</span></p>
+          <p class="text-3xl font-serif font-bold mb-1">Hey y'all</p>
+          <p class="text-3xl font-serif font-bold mb-6"> <span class="animate-wave">👋</span></p>
         </div>
-        <p class="hidden md:block text-3xl font-serif font-bold mb-6">Hello there, I'm Chloe
+        <p class="hidden md:block text-3xl font-serif font-bold mb-6"> Hey y'all
           <span class="animate-wave">👋</span>
         </p>
         <p class="mb-4">
-          Hey y’all, my name is Chloe Dusseault ( Du-sso). I’m your stoked local from Boise, Idaho who absolutely loves
+          My name is Chloe Dusseault ( Du-sso). I’m your stoked local from Boise, Idaho who absolutely loves
           Jesus and photography. I have a love for the outdoors and take every moment I can to capture it, focusing on
           the beauty of real life. I specialize in natural light photography and love creating images that tell a story.
           My goal is to evoke emotion and create a lasting impression through my photos. I believe in the power of
@@ -121,11 +143,13 @@
         <div>
           <p class="font-signika"><b>Chloe Dusseault</b></p>
           <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">
-            Boise, ID<br />(415) 208- 2116
+            Boise, ID
           </p>
           <div class="flex mx-auto">
             <div class="mx-auto space-x-6 flex mt-8 text-gray-600 dark:text-gray-300">
-
+              <a href="https://thestokedlocal.darkroom.com/#" target="_blank">
+                <i class="fas fa-shopping-cart"></i> Shop Prints
+              </a>
               <a class="transition duration-300 hover:opacity-75" href="https://www.instagram.com/chloe.duso/" target="_blank"
                 rel="noreferrer">
                 <span class="sr-only"> Instagram </span>
@@ -135,16 +159,17 @@
                     clipRule="evenodd" />
                 </svg>
               </a>
-
-
             </div>
           </div>
         </div>
       </div>
     </div>
   </footer>
-  <script src="fade_in.js"></script>
-  <script src="menu.js"></script>
+  <script>
+    Fancybox.bind("[data-fancybox]", {});
+  </script>
+  <script src="dist/fade_in.js"></script>
+  <script src="dist/menu.js"></script>
 </body>
 
 </html>
